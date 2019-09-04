@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1b7efe6e03.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/colors.css">
+    <script src="./index.js"></script>
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    <script id="navbar-template" type="text/x-handlebars-template">
+    <nav class="navbar tertiary">
+        <span onClick="openMenu()">
+            <i class="fas fa-bars"></i>
+        </span>
+
+        <ul id="menu" class="menu">
+            {{#each buttons}}
+            <li>     
+                <a href="#"><i class="fas fa-{{icon}}"></i> {{name}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    </nav>
+</script>
+
+    <script id="banner-template" type="text/x-handlebars-template">
+    <div class="container">
+        <div class="row">
+            <img width="100%" src="./assets/banner.jpg"/>
+        </div>
+    </div>
+</script>
+
+    <script id="grid-template" type="text/x-handlebars-template">
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <h6>Preço:</h6>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Mínimo" aria-label="Mínimo" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Máximo" aria-label="Máximo" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <h6>Preço:</h6>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Mínimo" aria-label="Mínimo" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Máximo" aria-label="Máximo" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-10">
+            
+            <div class="container">
+                <div class="row">
+                {{#each itens}}
+                    <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./assets/item.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td class="item-name">
+                                            {{name}}
+                                        </td>
+                                        <td class="item-price text-right">
+                                            R$ 50,00
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p class="card-text">{{description}}</p>
+                                <a href="#" class="btn quaternary"><i class="fas fa-cart-plus"></i> Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+</body>
+
+</html>
