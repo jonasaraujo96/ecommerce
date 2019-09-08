@@ -8,7 +8,7 @@ $(function () {
       {
         icon: 'home',
         name: 'Página inicial',
-        link: 'index.html'
+        link: '#'
       },
       {
         icon: 'tshirt',
@@ -18,12 +18,12 @@ $(function () {
       {
         icon: 'phone',
         name: 'Contato',
-        link: ''
+        link: 'html/contact.html'
       },
       {
         icon: 'info-circle',
         name: 'Sobre',
-        link: ''
+        link: 'html/about.html'
       },
     ]
   };

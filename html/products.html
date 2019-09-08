@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="animated fadeIn">
 
 <head>
     <meta charset="utf-8">
@@ -16,14 +16,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./../libs/fontawesome/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/1b7efe6e03.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
     <link rel="stylesheet" href="./../styles/products.css">
     <link rel="stylesheet" href="./../styles/colors.css">
     <script src="./../js/products.js"></script>
-    <title>Produtos</title>
+    <link rel="stylesheet" href="./../libs/animate.css">
+
+    <title>Ateliê Balaústre - Produtos</title>
 </head>
 
 <body class="primary">
@@ -45,7 +47,7 @@
 </script>
 
     <script id="banner-template" type="text/x-handlebars-template">
-    <div class="container">
+    <div class="container animated jackInTheBox">
         <div class="row">
             <img width="100%" src="./../assets/banner.jpg"/>
         </div>
@@ -58,7 +60,7 @@
         <div class="row">
             <div class="col-12 col-sm-4 col-md-4 col-lg-2 col-xl-2">
 
-                <div class="card filter secondary" style="width: 100%;">
+                <div class="card filter secondary animated fadeInLeft" style="width: 100%;">
                     <div class="card-body">
                         <h6>Preço:</h6>
                         <div class="input-group mb-3">
@@ -72,7 +74,7 @@
 
                 <br>
 
-                <div class="card filter secondary" style="width: 100%;">
+                <div class="card filter secondary animated fadeInLeft" style="width: 100%;">
                     <div class="card-body">
                         <h6>Preço:</h6>
                         <div class="input-group mb-3">
@@ -91,7 +93,7 @@
                 <div class="row">
                 {{#each itens}}
                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4">
-                        <div class="card secondary">
+                        <div class="card secondary animated fadeInDown">
                             <img src="./../assets/item.png" class="card-img-top" alt="...">
                             <div class="card-body text-center">
                                 <table style="width: 100%">
@@ -114,6 +116,31 @@
             </div>
         </div>
     </div>
+</script>
+
+<script id="footer-template" type="text/x-handlebars-template">
+    <footer class="tertiary text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul class="text-left">
+                        {{#each information}}
+                        <li><i class="fas fa-{{icon}}"></i> {{name}} {{text}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul class="text-left">
+                        {{#each socialNetwork}}
+                        <li><i class="fab fa-{{icon}}"></i> {{name}} {{text}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+        <small>&copy; 2019 ateliebalaustre.com.br<small>
+    </footer>
 </script>
 
 </body>
