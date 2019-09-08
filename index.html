@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta http-equiv="refresh" content="5"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -21,100 +22,67 @@
 
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/colors.css">
-    <script src="./index.js"></script>
-    <title>Hello, world!</title>
+    <script src="./js/index.js"></script>
+    <title>Produtos</title>
 </head>
 
-<body>
+<body class="primary">
 
     <script id="navbar-template" type="text/x-handlebars-template">
-    <nav class="navbar tertiary">
-        <span onClick="openMenu()">
-            <i class="fas fa-bars"></i>
-        </span>
+        <nav class="navbar tertiary">
+            <span onClick="openMenu()">
+                <i class="fas fa-bars"></i>
+            </span>
 
-        <ul id="menu" class="menu">
-            {{#each buttons}}
-            <li>     
-                <a href="#"><i class="fas fa-{{icon}}"></i> {{name}}</a>
-            </li>
-            {{/each}}
-        </ul>
-    </nav>
-</script>
+            <ul id="menu" class="menu">
+                {{#each buttons}}
+                <li>     
+                    <a href="{{link}}"><i class="fas fa-{{icon}}"></i> {{name}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </nav>
+    </script>
 
-    <script id="banner-template" type="text/x-handlebars-template">
-    <div class="container">
-        <div class="row">
-            <img width="100%" src="./assets/banner.jpg"/>
-        </div>
-    </div>
-</script>
-
-    <script id="grid-template" type="text/x-handlebars-template">
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-2">
-
-                <div class="card" style="width: 100%;">
-                    <div class="card-body">
-                        <h6>Preço:</h6>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Mínimo" aria-label="Mínimo" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Máximo" aria-label="Máximo" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-
-                <div class="card" style="width: 100%;">
-                    <div class="card-body">
-                        <h6>Preço:</h6>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Mínimo" aria-label="Mínimo" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Máximo" aria-label="Máximo" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-                </div>
-
+    <script id="landing-template" type="text/x-handlebars-template">
+        <div id="landing-page" class="secondary d-flex">
+            <div class="jumbotron secondary justify-content-center align-self-center">
+                <h1 class="display-4">Ateliê Balaústre</h1>
+                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                <hr class="my-4">
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <a class="btn quaternary btn-lg" href="html/products.html" role="button">Ver produtos</a>
             </div>
-            <div class="col-10">
-            
+        </div>
+    </script>
+
+    <script id="footer-template" type="text/x-handlebars-template">
+        <footer class="tertiary text-center">
             <div class="container">
                 <div class="row">
-                {{#each itens}}
-                    <div class="col-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./assets/item.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <table style="width: 100%">
-                                    <tr>
-                                        <td class="item-name">
-                                            {{name}}
-                                        </td>
-                                        <td class="item-price text-right">
-                                            R$ 50,00
-                                        </td>
-                                    </tr>
-                                </table>
-                                <p class="card-text">{{description}}</p>
-                                <a href="#" class="btn quaternary"><i class="fas fa-cart-plus"></i> Adicionar ao carrinho</a>
-                            </div>
-                        </div>
+                    <div class="col">
+                        <ul class="text-left">
+                            {{#each information}}
+                            <li><i class="fas fa-{{icon}}"></i> {{name}} {{text}}</li>
+                            {{/each}}
+                        </ul>
                     </div>
-                {{/each}}
+                    <div class="col">
+                        <ul class="text-left">
+                            {{#each socialNetwork}}
+                            <li><i class="fab fa-{{icon}}"></i> {{name}} {{text}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</script>
+                </div>
+
+            <small>&copy; 2019 ateliebalaustre.com.br<small>
+        </footer>
+    </script>
+
 
 </body>
 
 </html>
+
