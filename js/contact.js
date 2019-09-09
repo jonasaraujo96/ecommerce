@@ -25,6 +25,11 @@ $(function () {
         name: 'Sobre',
         link: './about.html'
       },
+      {
+        icon: 'users-cog',
+        name: 'Painel',
+        link: './panel.html'
+      },
     ]
   };
 

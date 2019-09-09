@@ -8,22 +8,22 @@ $(function () {
       {
         icon: 'home',
         name: 'Página inicial',
-        link: './../index.html'
+        link: '../index.html'
       },
       {
         icon: 'tshirt',
         name: 'Produtos',
-        link: './products.html'
+        link: '#'
       },
       {
         icon: 'phone',
         name: 'Contato',
-        link: './contact.html'
+        link: 'contact.html'
       },
       {
         icon: 'info-circle',
         name: 'Sobre',
-        link: '#'
+        link: 'about.html'
       },
       {
         icon: 'users-cog',
@@ -40,17 +40,25 @@ $(function () {
 
 
 $(function () {
-  const theTemplateScript = $("#about-template").html();
-
+  const theTemplateScript = $("#panel-template").html();
   const theTemplate = Handlebars.compile(theTemplateScript);
-
-  const context = { };
-
+  const context = { 
+    buttons: [
+      {
+        icon: 'tshirt',
+        name: 'Cadastrar produto',
+        link: '#'
+      },
+      {
+        icon: 'user',
+        name: 'Cadastrar cliente',
+        link: './cadastro.html'
+      },
+    ]
+  };
   const theCompiledHtml = theTemplate(context);
-
   $(document.body).append(theCompiledHtml);
 });
-
 
 $(function () {
   const theTemplateScript = $("#footer-template").html();
