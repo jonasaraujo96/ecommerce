@@ -1,24 +1,3 @@
-.navbar {
-    text-align: center;
-    min-height: 50px
-}
-
-.menu {
-    list-style-type: none;
-    display: none;
-    margin: 15px auto;
-}
-
-.menu li {
-    margin: 15px auto;
-}
-
-.menu li a {
-    color: whitesmoke;
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 400px
-}
-
 .fa-bars {
     color: whitesmoke;
     position: absolute;
@@ -42,10 +21,6 @@
     margin-right: 5px
 }
 
-.active {
-    display: block;
-}
-
 #landing-page {
     min-height: 80vh;
 }
@@ -57,35 +32,4 @@
 
 .jumbotron h1 {
     font-weight: 800
-}
-
-footer {
-    min-height: 15vh;
-    color: whitesmoke;
-    font-family: 'Poppins', sans-serif;
-    padding: 15px
-}
-
-footer ul {
-    list-style-type: none;
-}
-
-@media screen and (min-width: 768px) {
-    .navbar {
-        justify-content: space-between;
-    }
-
-    .menu {
-        display: flex;
-        margin: 0px auto;
-    }
-
-    .menu li a{
-        margin-left: 40px;
-    }
-
-    .fa-bars {
-        display: none;
-    }
-    
 }

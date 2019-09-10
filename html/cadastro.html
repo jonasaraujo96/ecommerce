@@ -22,163 +22,185 @@
 
     <link rel="stylesheet" href="./../styles/cadastro.css">
     <link rel="stylesheet" href="./../styles/colors.css">
+    <link rel="stylesheet" href="./../styles/navbar.css">
+    <link rel="stylesheet" href="./../styles/footer.css">
     <script src="./../js/cadastro.js"></script>
     <link rel="stylesheet" href="./../libs/animate.css">
 
-    <title>Ateliê Balaústre - Painel</title>
+    <title>Ateliê Balaústre - Cadastro de Cliente</title>
 </head>
 
 <body class="primary">
 
     <script id="navbar-template" type="text/x-handlebars-template">
-    <nav class="navbar tertiary">
-        <span onClick="openMenu()">
-            <i class="fas fa-bars"></i>
-        </span>
+        <header>
+            <nav class="navbar tertiary">
+                <span onClick="openMenu()">
+                    <i class="fas fa-bars"></i>
+                </span>
 
-        <ul id="menu" class="menu">
-            {{#each buttons}}
-            <li>     
-                <a href="{{link}}"><i class="fas fa-{{icon}}"></i> {{name}}</a>
-            </li>
-            {{/each}}
-        </ul>
-    </nav>
-</script>
-
-<script id="panel-template" type="text/x-handlebars-template">
-    <div id="panel-page" class="secondary">
-        <div class="row">
-            <div id="panel-menu" class="col-3">
-                <ul class="tertiary">
+                <ul id="menu" class="menu">
                     {{#each buttons}}
-                    <li>     
+                    <li>
                         <a href="{{link}}"><i class="fas fa-{{icon}}"></i> {{name}}</a>
                     </li>
                     {{/each}}
                 </ul>
-            </div>
-            <div class="col-9">
-                <div class="card tertiary">
-                    <div class="card-body">
-                        <div class="container">
-                            <form>
-                                <div class="row">
-                                    <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-4">
-                                        <div class="form-group">
-                                            <label for="nome">Nome</label>
-                                            <input type="text" class="form-control" id="nome" aria-describedby="nome" placeholder="Digite o nome">
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                        <div class="form-group">
-                                            <label for="dataNascimento">Data de nascimento</label>
-                                            <input type="text" class="form-control" id="dataNascimento" aria-describedby="dataNascimento" placeholder="Digite a data de nascimento">
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                        <div class="form-group">
-                                            <label for="telefone">Telefone</label>
-                                            <input type="tel" class="form-control" id="telefone" aria-describedby="telefone" placeholder="Digite o telefone">
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3">
-                                        <div class="form-group">
-                                            <label for="cpf">CPF</label>
-                                            <input type="number" class="form-control" id="cpf" aria-describedby="cpf" placeholder="Digite o CPF">
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2">
-                                        <div class="form-group">
-                                            <label for="sexo">Sexo</label>
-                                            <select class="custom-select" id="sexo">
-                                                <option selected>Escolha</option>
-                                                <option value="m">Masculino</option>
-                                                <option value="f">Feminino</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-6 col-lg-5 col-xl-4">
-                                        <div class="form-group">
-                                            <label for="endereco">Endereço</label>
-                                            <input type="text" class="form-control" id="endereco" aria-describedby="endereco" placeholder="Digite o Endereço">
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3">
-                                        <div class="form-group">
-                                            <label for="cidade">Cidade</label>
-                                            <input type="text" class="form-control" id="cidade" aria-describedby="cidade" placeholder="Digite a Cidade">
-                                        </div>
-                                    </div>
-                                    <div class="col-5 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                                        <div class="form-group">
-                                            <label for="estado">Estado</label>
-                                            <select class="custom-select" id="sexo">
-                                                <option selected>Escolha</option>
-                                                <option value="sp">SP</option>
-                                                <option value="mg">MG</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3">
-                                        <div class="form-group">
-                                            <label for="bairro">Bairro</label>
-                                            <input type="text" class="form-control" id="bairro" aria-describedby="bairro" placeholder="Digite o Bairro">
-                                        </div>
-                                    </div>
-                                    <div class="col-7 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                                        <div class="form-group">
-                                            <label for="cep">CEP</label>
-                                            <input type="number" class="form-control" id="cep" aria-describedby="cep" placeholder="Digite o CEP">
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                        <div class="form-group">
-                                            <label for="complemento">Complemento</label>
-                                            <input type="text" class="form-control" id="complemento" aria-describedby="complemento" placeholder="Digite o Complemento">
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-7 col-md-5 col-lg-5 col-xl-4">
-                                        <div class="form-group">
-                                            <label for="email">E-mail</label>
-                                            <input type="mail" class="form-control" id="email" aria-describedby="email" placeholder="Digite o E-mail">
-                                        </div>
-                                    </div>
+            </nav>
+        </header>
+    </script>
+
+    <script id="panel-template" type="text/x-handlebars-template">
+        <section>
+            <div id="panel-page" class="secondary">
+                <div class="row">
+                    <div id="panel-menu" class="col-3">
+                        <ul class="tertiary">
+                            {{#each buttons}}
+                            <li>
+                                <a href="{{link}}"><i class="fas fa-{{icon}}"></i> {{name}}</a>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <div class="col-9">
+                        <div class="card tertiary">
+                            <div class="card-body">
+                                <div class="container animated pulse">
+                                    <main>
+                                        <form>
+                                            <h1 class="text-center">Cadastro de Cliente</h1>
+                                            <div class="row">
+                                                <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-4">
+                                                    <div class="form-group">
+                                                        <label for="nome">Nome</label>
+                                                        <input type="text" maxlength="50" class="form-control" id="nome"
+                                                            aria-describedby="nome" placeholder="Digite o nome">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                                    <div class="form-group">
+                                                        <label for="dataNascimento">Data de nascimento</label>
+                                                        <input type="text" maxlength="10" class="form-control" id="dataNascimento"
+                                                            aria-describedby="dataNascimento"
+                                                            placeholder="Digite a data de nascimento">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                                    <div class="form-group">
+                                                        <label for="telefone">Telefone</label>
+                                                        <input type="tel" maxlength="11" class="form-control" id="telefone"
+                                                            aria-describedby="telefone" placeholder="Digite o telefone">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+                                                    <div class="form-group">
+                                                        <label for="cpf">CPF</label>
+                                                        <input type="text" maxlength="14" class="form-control" id="cpf"
+                                                            aria-describedby="cpf" placeholder="Digite o CPF">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2">
+                                                    <div class="form-group">
+                                                        <label for="sexo">Sexo</label>
+                                                        <select class="custom-select" id="sexo">
+                                                            <option selected>Escolha</option>
+                                                            <option value="m">Masculino</option>
+                                                            <option value="f">Feminino</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-md-6 col-lg-5 col-xl-4">
+                                                    <div class="form-group">
+                                                        <label for="endereco">Endereço</label>
+                                                        <input type="text" maxlength="50" class="form-control" id="endereco"
+                                                            aria-describedby="endereco" placeholder="Digite o Endereço">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+                                                    <div class="form-group">
+                                                        <label for="cidade">Cidade</label>
+                                                        <input type="text" maxlength="50" class="form-control" id="cidade"
+                                                            aria-describedby="cidade" placeholder="Digite a Cidade">
+                                                    </div>
+                                                </div>
+                                                <div class="col-5 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+                                                    <div class="form-group">
+                                                        <label for="estado">Estado</label>
+                                                        <select class="custom-select" id="sexo">
+                                                            <option selected>Escolha</option>
+                                                            <option value="sp">SP</option>
+                                                            <option value="mg">MG</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+                                                    <div class="form-group">
+                                                        <label for="bairro">Bairro</label>
+                                                        <input type="text" maxlength="50" class="form-control" id="bairro"
+                                                            aria-describedby="bairro" placeholder="Digite o Bairro">
+                                                    </div>
+                                                </div>
+                                                <div class="col-7 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                                                    <div class="form-group">
+                                                        <label for="cep">CEP</label>
+                                                        <input type="text" maxlength="9" class="form-control" id="cep"
+                                                            aria-describedby="cep" placeholder="Digite o CEP">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                    <div class="form-group">
+                                                        <label for="complemento">Complemento</label>
+                                                        <input type="text" maxlength="50" class="form-control" id="complemento"
+                                                            aria-describedby="complemento" placeholder="Digite o Complemento">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-7 col-md-5 col-lg-5 col-xl-4">
+                                                    <div class="form-group">
+                                                        <label for="email">E-mail</label>
+                                                        <input type="mail" maxlength="50" class="form-control" id="email"
+                                                            aria-describedby="email" placeholder="Digite o E-mail">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-right">
+                                                    <button type="submit" class="btn quaternary">Limpar</button>
+                                                    <button type="submit" class="btn quaternary">Cadastrar</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </main>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</script>
+        </section>
+    </script>
 
-<script id="footer-template" type="text/x-handlebars-template">
-    <footer class="tertiary text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <ul class="text-left">
-                        {{#each information}}
-                        <li><i class="fas fa-{{icon}}"></i> {{name}} {{text}}</li>
-                        {{/each}}
-                    </ul>
-                </div>
-                <div class="col">
-                    <ul class="text-left">
-                        {{#each socialNetwork}}
-                        <li><i class="fab fa-{{icon}}"></i> {{name}} {{text}}</li>
-                        {{/each}}
-                    </ul>
+    <script id="footer-template" type="text/x-handlebars-template">
+        <footer class="tertiary text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <ul class="text-left">
+                            {{#each information}}
+                            <li><i class="fas fa-{{icon}}"></i> {{name}} {{text}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="text-left">
+                            {{#each socialNetwork}}
+                            <li><i class="fab fa-{{icon}}"></i> {{name}} {{text}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
                 </div>
             </div>
-            </div>
-
-        <small>&copy; 2019 ateliebalaustre.com.br<small>
-    </footer>
-</script>
+            <small>&copy; 2019 ateliebalaustre.com.br<small>
+        </footer>
+    </script>
 
 </body>
-
 </html>

@@ -22,6 +22,8 @@
 
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/colors.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="./libs/animate.css">
     <script src="./js/index.js"></script>
     <title>Ateliê Balaústre - Página Inicial</title>
@@ -30,31 +32,35 @@
 <body class="primary">
 
     <script id="navbar-template" type="text/x-handlebars-template">
-        <nav class="navbar tertiary">
-            <span onClick="openMenu()">
-                <i class="fas fa-bars"></i>
-            </span>
+        <header>
+            <nav class="navbar tertiary">
+                <span onClick="openMenu()">
+                    <i class="fas fa-bars"></i>
+                </span>
 
-            <ul id="menu" class="menu">
-                {{#each buttons}}
-                <li>     
-                    <a href="{{link}}"><i class="fas fa-{{icon}}"></i> {{name}}</a>
-                </li>
-                {{/each}}
-            </ul>
-        </nav>
+                <ul id="menu" class="menu">
+                    {{#each buttons}}
+                    <li>
+                        <a href="{{link}}"><i class="fas fa-{{icon}}"></i> {{name}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </nav>
+        </header>
     </script>
 
     <script id="landing-template" type="text/x-handlebars-template">
-        <div id="landing-page" class="secondary d-flex">
-            <div class="jumbotron secondary justify-content-center align-self-center animated pulse">
-                <h1 class="display-4">Ateliê Balaústre</h1>
-                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                <hr class="my-4">
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                <a class="btn quaternary btn-lg" href="html/products.html" role="button">Ver produtos</a>
+        <section>
+            <div id="landing-page" class="secondary d-flex">
+                <div class="jumbotron secondary justify-content-center align-self-center animated pulse">
+                    <h1 class="display-4">Ateliê Balaústre</h1>
+                    <p class="lead">Ateliê Balaústre: estruturando a moda para você</p>
+                    <hr class="my-4">
+                    <p>O Ateliê Balaústre tem a missão de levar beleza e conforto em cada peça produzida, por meio de um elaborado trabalho manual. É nosso objetivo que as mulheres que vestimos se sintam plenamente seguras com sua auto estima e seu estilo através de nossa moda.</p>
+                    <a class="btn quaternary btn-lg" href="html/products.html" role="button">Ver produtos</a>
+                </div>
             </div>
-        </div>
+        </section>
     </script>
 
     <script id="footer-template" type="text/x-handlebars-template">
@@ -76,14 +82,10 @@
                         </ul>
                     </div>
                 </div>
-                </div>
-
+            </div>
             <small>&copy; 2019 ateliebalaustre.com.br<small>
         </footer>
     </script>
 
-
 </body>
-
 </html>
-
