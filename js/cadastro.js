@@ -13,7 +13,7 @@ $(function () {
       {
         icon: 'tshirt',
         name: 'Produtos',
-        link: '#'
+        link: 'products.html'
       },
       {
         icon: 'phone',
@@ -28,7 +28,7 @@ $(function () {
       {
         icon: 'users-cog',
         name: 'Painel',
-        link: './panel.html'
+        link: '#'
       },
     ]
   };
